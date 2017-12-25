@@ -1,0 +1,71 @@
+.c-btn {
+    display: inline-block;
+    padding: (0.5 * $base-spacing-unit) $base-spacing-unit;
+    text-decoration: none;
+    background-color: $color-btn;
+    color: #fff;
+    border-radius: $base-radius;
+    transition: background-color 0.2s;
+    &:hover,
+    &:focus {
+        background-color: $color-btn-hover;
+        color: #fff;
+    }
+}
+
+
+/*
+@styleguide
+
+@title BUTTON
+
+Use the c-button classes on and  `<a>`, `<div>`, `<p>` elements.
+
+<a href="#" class="c-button c-button__default">Button Default</a>
+
+    <a href="#" class="c-button c-button__default">Button Default</a>
+
+<a href="#" class="c-button c-button__default c-button__default--border-inverse">Button Default Border Inverse</a>
+
+    <a href="#" class="c-button c-button__default c-button__default--border-inverse">Button Default Border Inverse</a>
+
+<a href="#" class="c-button c-button__small">Button Small</a>
+
+    <a href="#" class="c-button c-button__small">Button Small</a>
+    
+<a href="#" class="c-button c-button__small c-button__small--border-inverse">Button Small Border Inverse</a>
+
+    <a href="#" class="c-button c-button__small c-button__small--border-inverse">Button Small Border Inverse</a>
+*/
+
+.c-button {
+    padding: 0 40px;
+    color: #FFF;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: #004091;
+    &__default {
+        min-width: 200px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+        &--border-inverse {
+            color: #004091;
+            background-color: #FFF;
+            border: 2px solid #004091;
+        }
+    }
+    &__small {
+        min-width: 140px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 13px;
+        &--border-inverse {
+            background-color: #FFF;
+            color: #004091;
+            border: 1px solid #004091;
+        }
+    }
+}

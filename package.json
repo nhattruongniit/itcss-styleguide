@@ -1,0 +1,23 @@
+{
+    "name": "itcss-styleguide",
+    "version": "1.0.0",
+    "description": "This project create style guide template. Integrate new CSS Architecture",
+    "main": "gulpfile.js",
+    "scripts": {
+        "serve": "gulp serve"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "browser-sync": "^2.18.13",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^4.0.0",
+        "gulp-cssmin": "^0.2.0",
+        "gulp-postcss": "^6.0.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^3.1.0",
+        "postcss": "^5.2.18",
+        "postcss-style-guide": "^0.14.0",
+        "precss": "^2.0.0"
+    }
+}
