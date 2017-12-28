@@ -9,40 +9,41 @@ var reload = browserSync.reload;
 var precss = new require('precss');
 var styleguide = new require('postcss-style-guide');
 
-gulp.task('sass', () => {
-    return gulp.src('./sass/*.scss')
+gulp.task('sass', function(){
+    return gulp.src('./src/sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 5 versions']
         }))
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('./dist/css'))
         .pipe(cssmin())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('./dist/css'))
         .pipe(browserSync.stream());
 });
 
-gulp.task('styleguide', () => {
-    return gulp.src('./css/common.css')
+gulp.task('build', function(){
+    return gulp.src('./dist/css/common.css')
         .pipe(postcss([
             precss(),
             styleguide({
-                project: 'My Project Generate CSS',
-                dest: './styleguide/index.html',
+                project: "Project's CSS guideline",
+                dest: './dist/index.html',
                 showCode: true,
                 theme: 'default'
             })
         ]))
-        .pipe(gulp.dest('./styleguide/css'))
 });
 
-gulp.task('serve', () => {
+gulp.task('serve', function(){
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./dist/"
         }
     });
 
-    gulp.watch('./sass/**/*.scss', ['sass', 'styleguide']);
-    gulp.watch('./*.html').on('change', reload);
-})
+    gulp.watch('./src/sass/**/*.scss', ['sass', 'styleguide']);
+    gulp.watch('./src/**/*.html').on('change', reload);
+});
+
+gulp.task('default', [ 'sass', 'build']);

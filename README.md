@@ -19,7 +19,7 @@ $ npm run serve
 # Getting Started
 
 ### We use this below sytanx in sass file:
-```bash
+```
 Example: ./sass/_components.buttuons.scss file.
 
 /*
@@ -40,12 +40,20 @@ Use the button classes on and `<a>`, `<button>`, `<input>` elements.
 ```
 
 ### Step to step:
+
 * Edit any .scss files on the sass folder.
 * Save it.
-* View output of guide line at  `styleguide/styleguide.html` folder.
+* View output of guide line at  `dist/index.html` folder.
 
 ## Technologies apply for this project: 
 * [SASS](http://sass-lang.com/)
 * [Gulp](https://gulpjs.com/)
 * [BEM + ITCSS](https://codepen.io/clindsey/post/bem-and-itcss-for-css-architecture)
 * [PostCSS](https://github.com/morishitter/postcss-style-guide)
+
+## Gulp commands:
+
+- `gulp sass`: Process sass files
+- `gulp build`: Build the guideline
+- `gulp serve`: Run web server to view output of css and guideline result
+- `gulp`: Default command, will run `sass` and `build` commands.
